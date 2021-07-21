@@ -1,5 +1,7 @@
-const groupByCommas = () => {
-
+const groupByCommas = (numbers) => {
+	return numbers.toString().match(/[0-9]/g).reverse().map((n, i, arr) => {
+			return (((i+1) % 3 === 0 && i+1 !== arr.length) ? `,${n}` : n);
+	}).reverse().join('');
 }
 
 console.log(groupByCommas(1)); // 1
